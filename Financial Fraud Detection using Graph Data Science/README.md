@@ -1,0 +1,20 @@
+### Project Overview
+With scams and fraud costing billions annually, traditional detection techniques often fail to catch sophisticated, multi-layered operations. This project leverages Graph Data Science to power a new generation of fraud solutions. By mapping synthetic financial data into a graph database, this system traces behavioral patterns, detects overlapping synthetic identities, and tracks illicit money pathways through complex networks of operators.
+
+#### Tech Stack & Tools
+**Database**: Neo4j (Graph Database)
+
+**Query Language**: Cypher / GQL
+
+**Analytics**: Neo4j Graph Data Science (GDS) Library, APOC
+
+**Algorithms**: Louvain Community Detection
+
+#### Key Features & Methodology
+**Complex Data Modeling**: Ingested relational CSV data to create a robust graph architecture connecting Clients to their Transactions (Purchases and Transfers), Sellers, and PII (Phone, Email, TFN).
+
+**Temporal Transaction Chains**: Engineered sequential relationships (NEXT, FIRST_TX, LAST_TX) to transform isolated transactions into an ordered timeline, allowing for the detection of rapid-fire money movement.
+
+**Fraud Ring Identification (GDS)**: Utilized the Louvain algorithm to detect tightly connected communities of accounts sharing the same underlying personal identifiers, effectively flagging synthetic identity fraud.
+
+**Money Mule Tracking**: Executed deep-path traversal queries to identify central accounts operating outside of immediate fraud cells, pinpointing the key suspects responsible for funneling and laundering scammed funds.
